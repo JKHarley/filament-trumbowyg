@@ -9,18 +9,6 @@ class FilamentTrumbowygServiceProvider extends PluginServiceProvider
 {
     public static string $name = 'filament-trumbowyg';
 
-    protected array $resources = [
-        // CustomResource::class,
-    ];
-
-    protected array $pages = [
-        // CustomPage::class,
-    ];
-
-    protected array $widgets = [
-        // CustomWidget::class,
-    ];
-
     protected array $styles = [
         'plugin-filament-trumbowyg' => __DIR__.'/../resources/dist/filament-trumbowyg.css',
         'trumbowyg-core' => 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/ui/trumbowyg.min.css',
@@ -32,17 +20,11 @@ class FilamentTrumbowygServiceProvider extends PluginServiceProvider
         'trumbowyg-core' => 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/trumbowyg.min.js',
     ];
 
-    // protected array $beforeCoreScripts = [
-    //     'plugin-filament-trumbowyg' => __DIR__ . '/../resources/dist/filament-trumbowyg.js',
-    // ];
-
     public function configurePackage(Package $package): void
     {
         $package
             ->name(static::$name)
-            ->hasConfigFile()
             ->hasAssets()
-            ->hasTranslations()
             ->hasViews();
     }
 }
