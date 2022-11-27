@@ -1,0 +1,7 @@
+.static {
+  position: static;
+}
+
+.trumbowyg-button-pane {
+  z-index: 0!important;
+}

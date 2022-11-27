@@ -1,1 +1,5 @@
 @tailwind utilities;
+
+ .trumbowyg-button-pane {
+     z-index: 0!important;
+ }

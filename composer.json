@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "jkharley/filament-trumbowyg",
+    "description": "This is my package filament-trumbowyg",
     "keywords": [
-        ":vendor_name",
+        "JKHarley",
         "laravel",
-        ":package_slug"
+        "filament-trumbowyg"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/jkharley/filament-trumbowyg",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "James Harley",
+            "email": "hello@jamesharley.dev",
             "role": "Developer"
         }
     ],
@@ -38,13 +38,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "JKHarley\\FilamentTrumbowyg\\": "src",
+            "JKHarley\\FilamentTrumbowyg\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "JKHarley\\FilamentTrumbowyg\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -67,10 +67,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "JKHarley\\FilamentTrumbowyg\\FilamentTrumbowygServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentTrumbowyg": "JKHarley\\FilamentTrumbowyg\\Facades\\FilamentTrumbowyg"
             }
         }
     },
