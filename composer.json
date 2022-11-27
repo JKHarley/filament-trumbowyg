@@ -1,6 +1,6 @@
 {
     "name": "jkharley/filament-trumbowyg",
-    "description": "This is my package filament-trumbowyg",
+    "description": "Trumbowyg wysiwyg editor field for Filament.",
     "keywords": [
         "JKHarley",
         "laravel",
