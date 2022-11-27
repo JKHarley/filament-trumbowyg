@@ -11,6 +11,8 @@
 > This package is still in active development and only provides usage of the default Trumbowyg toolbar. Ability to customise the toolbar will be supported in the near future along with many other additions.
 
 [Trumbowyg](https://alex-d.github.io/Trumbowyg/) wysiwyg editor field for Filament.
+
+<img width="1518" alt="Screenshot 2022-11-27 at 18 04 49" src="https://user-images.githubusercontent.com/27085725/204152174-cc7d0ed5-6911-4e49-adc0-eb839df70261.png">
  
 
 ## Installation
