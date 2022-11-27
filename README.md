@@ -1,68 +1,78 @@
-# :package_description
+# Filament Trumbowyg
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/run-tests?label=tests)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jkharley/filament-trumbowyg.svg?style=flat-square)](https://packagist.org/packages/jkharley/filament-trumbowyg)
+[![Total Downloads](https://img.shields.io/packagist/dt/jkharley/filament-trumbowyg.svg?style=flat-square)](https://packagist.org/packages/jkharley/filament-trumbowyg)
 
-<!--delete-->
----
-This repo can be used to scaffold a Filament plugin. Follow these steps to get started:
+[//]: # ([![GitHub Tests Action Status]&#40;https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/run-tests?label=tests&#41;]&#40;https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3Arun-tests+branch%3Amain&#41;)
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Make something great!
----
-<!--/delete-->
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/Check%20&%20fix%20styling?label=code%20style)](https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+> **Warning**:
+> This package is still in active development and only provides usage of the default Trumbowyg toolbar. Ability to customise the toolbar will be supported in the near future along with many other additions.
+
+[Trumbowyg](https://alex-d.github.io/Trumbowyg/) wysiwyg editor field for Filament.
+ 
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
+composer require jkharley/filament-trumbowyg
 ```
 
-You can publish and run the migrations with:
+[//]: # (You can publish the config file with:)
 
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
-```
+[//]: # ()
+[//]: # (```bash)
 
-You can publish the config file with:
+[//]: # (php artisan vendor:publish --tag="filament-trumbowyg-config")
 
-```bash
-php artisan vendor:publish --tag=":package_slug-config"
-```
+[//]: # (```)
 
-Optionally, you can publish the views using
+[//]: # ()
+[//]: # (Optionally, you can publish the views using)
 
-```bash
-php artisan vendor:publish --tag=":package_slug-views"
-```
+[//]: # ()
+[//]: # (```bash)
 
-This is the contents of the published config file:
+[//]: # (php artisan vendor:publish --tag="filament-trumbowyg-views")
 
-```php
-return [
-];
-```
+[//]: # (```)
+
+[//]: # ()
+[//]: # (This is the contents of the published config file:)
+
+[//]: # ()
+[//]: # (```php)
+
+[//]: # (return [)
+
+[//]: # (];)
+
+[//]: # (```)
 
 ## Usage
 
 ```php
-$skeleton = new VendorName\Skeleton();
-echo $skeleton->echoPhrase('Hello, VendorName!');
+use JKHarley\FilamentTrumbowyg\Trumbowyg;
+
+Trumbowyg::make('my-field')
 ```
 
-## Testing
+## Future Additions
+- Toolbar customisation
+- Theme customisation
+- Config customisation
 
-```bash
-composer test
-```
+[//]: # (## Testing)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (composer test)
+
+[//]: # (```)
 
 ## Changelog
 
@@ -78,7 +88,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [James Harley](https://github.com/JKHarley)
 - [All Contributors](../../contributors)
 
 ## License
