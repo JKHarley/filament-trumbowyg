@@ -5,7 +5,7 @@
 
 [//]: # ([![GitHub Tests Action Status]&#40;https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/run-tests?label=tests&#41;]&#40;https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3Arun-tests+branch%3Amain&#41;)
 
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/Check%20&%20fix%20styling?label=code%20style)](https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[//]: # ([![GitHub Code Style Action Status]&#40;https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/Check%20&%20fix%20styling?label=code%20style&#41;]&#40;https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain&#41;)
 
 > **Warning**:
 > This package is still in active development and only provides usage of the default Trumbowyg toolbar. Ability to customise the toolbar will be supported in the near future along with many other additions.
