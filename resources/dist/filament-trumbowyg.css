@@ -5,3 +5,7 @@
 .trumbowyg-button-pane {
   z-index: 0!important;
 }
+
+.trumbowyg-editor {
+  background: #fff;
+}

@@ -11,21 +11,25 @@
     :required="$isRequired()"
     :state-path="$getStatePath()"
 >
-    <div wire:ignore x-data="{
-        state: $wire.entangle('{{ $getStatePath() }}').defer,
-    }">
-        <textarea @input.window="(e) => state = e.detail.text" id="trumbowyg"></textarea>
+    <div
+        wire:ignore
+         x-data="{ state: $wire.entangle('{{ $getStatePath() }}').defer }"
+    >
+        <textarea
+            x-on:{{ $getLabel() }}.window="(e) => state = e.detail.text"
+            id="{{ $getLabel() }}"
+        ></textarea>
     </div>
 </x-dynamic-component>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        $('#trumbowyg').trumbowyg();
-        $('#trumbowyg').trumbowyg('html', window.livewire.data.data.content);
-
         if (window.jQuery && window.Alpine) {
-            $('#trumbowyg').on('tbwchange', function (e) {
-                e.target.dispatchEvent(new CustomEvent('input', {bubbles: true, detail: {text: e.target.value }}))
+            $('#{{ $getLabel() }}').trumbowyg();
+            $('#{{ $getLabel() }}').trumbowyg('html', window.livewire.data.data['{{ strtolower($getLabel()) }}']);
+
+            $('#{{ $getLabel() }}').on('tbwchange', function (e) {
+                e.target.dispatchEvent(new CustomEvent('{{ strtolower($getLabel()) }}', {bubbles: true, detail: {text: e.target.value }}))
             });
         } else {
             if (!window.jQuery) {

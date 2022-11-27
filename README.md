@@ -1,13 +1,17 @@
 # Filament Trumbowyg
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jkharley/filament-trumbowyg.svg?style=flat-square)](https://packagist.org/packages/jkharley/filament-trumbowyg)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/run-tests?label=tests)](https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/Check%20&%20fix%20styling?label=code%20style)](https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jkharley/filament-trumbowyg.svg?style=flat-square)](https://packagist.org/packages/jkharley/filament-trumbowyg)
 
+[//]: # ([![GitHub Tests Action Status]&#40;https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/run-tests?label=tests&#41;]&#40;https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3Arun-tests+branch%3Amain&#41;)
 
+[//]: # ([![GitHub Code Style Action Status]&#40;https://img.shields.io/github/workflow/status/jkharley/filament-trumbowyg/Check%20&%20fix%20styling?label=code%20style&#41;]&#40;https://github.com/jkharley/filament-trumbowyg/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain&#41;)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+> **Warning**:
+> This package is still in active development and only provides usage of the default Trumbowyg toolbar. Ability to customise the toolbar will be supported in the near future along with many other additions.
+
+[Trumbowyg](https://alex-d.github.io/Trumbowyg/) wysiwyg editor field for Filament.
+ 
 
 ## Installation
 
@@ -17,44 +21,58 @@ You can install the package via composer:
 composer require jkharley/filament-trumbowyg
 ```
 
-You can publish and run the migrations with:
+[//]: # (You can publish the config file with:)
 
-```bash
-php artisan vendor:publish --tag="filament-trumbowyg-migrations"
-php artisan migrate
-```
+[//]: # ()
+[//]: # (```bash)
 
-You can publish the config file with:
+[//]: # (php artisan vendor:publish --tag="filament-trumbowyg-config")
 
-```bash
-php artisan vendor:publish --tag="filament-trumbowyg-config"
-```
+[//]: # (```)
 
-Optionally, you can publish the views using
+[//]: # ()
+[//]: # (Optionally, you can publish the views using)
 
-```bash
-php artisan vendor:publish --tag="filament-trumbowyg-views"
-```
+[//]: # ()
+[//]: # (```bash)
 
-This is the contents of the published config file:
+[//]: # (php artisan vendor:publish --tag="filament-trumbowyg-views")
 
-```php
-return [
-];
-```
+[//]: # (```)
+
+[//]: # ()
+[//]: # (This is the contents of the published config file:)
+
+[//]: # ()
+[//]: # (```php)
+
+[//]: # (return [)
+
+[//]: # (];)
+
+[//]: # (```)
 
 ## Usage
 
 ```php
-$filament-trumbowyg = new JKHarley\FilamentTrumbowyg();
-echo $filament-trumbowyg->echoPhrase('Hello, JKHarley!');
+use JKHarley\FilamentTrumbowyg\Trumbowyg;
+
+Trumbowyg::make('my-field')
 ```
 
-## Testing
+## Future Additions
+- Toolbar customisation
+- Theme customisation
+- Config customisation
 
-```bash
-composer test
-```
+[//]: # (## Testing)
+
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (composer test)
+
+[//]: # (```)
 
 ## Changelog
 
