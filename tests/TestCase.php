@@ -4,9 +4,9 @@ namespace JKHarley\FilamentTrumbowyg\Tests;
 
 use Filament\FilamentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use JKHarley\FilamentTrumbowyg\FilamentTrumbowygServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use JKHarley\FilamentTrumbowyg\FilamentTrumbowygServiceProvider;
 
 class TestCase extends Orchestra
 {
