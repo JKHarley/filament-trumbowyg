@@ -18,6 +18,9 @@
         <textarea
             x-on:{{ $getLabel() }}.window="(e) => state = e.detail.text"
             id="{{ $getLabel() }}"
+            @if (!is_null($getPlaceholder()))
+                placeholder="{{ $getPlaceholder() }}";
+            @endif
         ></textarea>
     </div>
 </x-dynamic-component>
