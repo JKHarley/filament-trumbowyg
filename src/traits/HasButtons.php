@@ -6,9 +6,9 @@ use Closure;
 
 trait HasButtons
 {
-    protected array | Closure | null $buttons = null;
+    protected array|Closure|null $buttons = null;
 
-    public function buttons(array | Closure | null $buttons): static
+    public function buttons(array|Closure|null $buttons): static
     {
         $this->buttons = $buttons;
 
