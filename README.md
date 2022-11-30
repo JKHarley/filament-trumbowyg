@@ -89,7 +89,9 @@ Trumbowyg::make('my-field')
 ```
 
 ## Future Additions
+- Localization
 - Theme customisation
+- SVG icon customisation
 
 [//]: # (## Testing)
 
