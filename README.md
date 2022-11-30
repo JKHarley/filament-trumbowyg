@@ -64,6 +64,10 @@ Trumbowyg::make('my-field')
 You can customise the buttons pane by passing an array of buttons to the buttons key in the `filament-trumbowyg` config file. This will overwrite the default buttons pane set by Trumbowyg and will be used across all `Trumbowyg` fields.
 
 ```php
+php artisan vendor:publish --tag="filament-trumbowyg-config"
+```
+
+```php
 // config/filament-trumbowyg.php
 'buttons' => [
     ['undo', 'redo'],
