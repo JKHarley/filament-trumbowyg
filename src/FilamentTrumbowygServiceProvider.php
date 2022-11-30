@@ -25,6 +25,7 @@ class FilamentTrumbowygServiceProvider extends PluginServiceProvider
         $package
             ->name(static::$name)
             ->hasAssets()
+            ->hasConfigFile()
             ->hasViews();
     }
 }

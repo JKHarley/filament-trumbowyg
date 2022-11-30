@@ -62,10 +62,39 @@ use JKHarley\FilamentTrumbowyg\Trumbowyg;
 Trumbowyg::make('my-field')
 ```
 
+### Buttons Pane Customisation
+
+You can customise the buttons pane by passing an array of buttons to the buttons key in the `filament-trumbowyg` config file. This will overwrite the default buttons pane set by Trumbowyg and will be used across all `Trumbowyg` fields.
+
+```php
+// config/filament-trumbowyg.php
+'buttons' => [
+    ['undo', 'redo'],
+    ['strong', 'em', 'del'],
+    'link',
+    'fullscreen',
+],
+
+// app/Filament/Resources/MyResource.php
+Trumbowyg::make('my-field')
+    ->buttons(),
+```
+
+Alternatively you can pass an array of buttons to the `buttons` method on the field. 
+You can also use this to overwrite the buttons set in the config file for a specific field.
+
+```php
+Trumbowyg::make('my-field')
+    ->buttons([
+        ['undo', 'redo'],
+        ['strong', 'em', 'del'],
+        'link',
+        'fullscreen',
+    ]),
+```
+
 ## Future Additions
-- Toolbar customisation
 - Theme customisation
-- Config customisation
 
 [//]: # (## Testing)
 

@@ -28,7 +28,20 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         if (window.jQuery && window.Alpine) {
-            $('#{{ $getLabel() }}').trumbowyg();
+            @if(!is_null($getButtons()))
+                $('#{{ $getLabel() }}').trumbowyg({
+                    resetCss: true,
+                    btns: @json($getButtons())
+                })
+            @else
+                $('#{{ $getLabel() }}').trumbowyg({
+                    resetCss: true,
+                    @if(!is_null(config('filament-trumbowyg.buttons')) && !empty(config('filament-trumbowyg.buttons')))
+                        btns: @json(config('filament-trumbowyg.buttons'))
+                    @endif
+                });
+            @endif
+
             $('#{{ $getLabel() }}').trumbowyg('html', window.livewire.data.data['{{ strtolower($getLabel()) }}']);
 
             $('#{{ $getLabel() }}').on('tbwchange', function (e) {
