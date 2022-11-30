@@ -70,12 +70,10 @@ You can customise the buttons pane by passing an array of buttons to the buttons
     ['strong', 'em', 'del'],
     'link',
     'fullscreen',
-],
-
-// app/Filament/Resources/MyResource.php
-Trumbowyg::make('my-field')
-    ->buttons(),
+]
 ```
+<img width="1604" alt="Screenshot 2022-11-30 at 18 20 13" src="https://user-images.githubusercontent.com/27085725/204877549-8e96b73b-695e-47a8-994e-bf99d6cd19ed.png">
+
 
 Alternatively you can pass an array of buttons to the `buttons` method on the field. 
 You can also use this to overwrite the buttons set in the config file for a specific field.
