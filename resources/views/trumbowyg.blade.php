@@ -1,3 +1,8 @@
+@php
+// Label is used to assign an id to the editor as $getId() causes issues
+$editorId = strtolower(str_replace(' ', '-', $getLabel()));
+@endphp
+
 <x-dynamic-component
     :component="$getFieldWrapperView()"
     :id="$getId()"
@@ -13,11 +18,11 @@
 >
     <div
         wire:ignore
-         x-data="{ state: $wire.entangle('{{ $getStatePath() }}').defer }"
+        x-data="{ state: $wire.entangle('{{ $getStatePath() }}').defer }"
     >
         <textarea
-            x-on:{{ $getLabel() }}.window="(e) => state = e.detail.text"
-            id="{{ $getLabel() }}"
+            x-on:{{ $editorId }}.window="(e) => state = e.detail.text"
+            id="{{ $editorId }}"
             @if (!is_null($getPlaceholder()))
                 placeholder="{{ $getPlaceholder() }}";
             @endif
@@ -28,13 +33,15 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         if (window.jQuery && window.Alpine) {
+            const id = '#{{ $editorId }}';
+
             @if(!is_null($getButtons()))
-                $('#{{ $getLabel() }}').trumbowyg({
+                $(id).trumbowyg({
                     resetCss: true,
                     btns: @json($getButtons())
                 })
             @else
-                $('#{{ $getLabel() }}').trumbowyg({
+                $(id).trumbowyg({
                     resetCss: true,
                     @if(!is_null(config('filament-trumbowyg.buttons')) && !empty(config('filament-trumbowyg.buttons')))
                         btns: @json(config('filament-trumbowyg.buttons'))
@@ -42,10 +49,16 @@
                 });
             @endif
 
-            $('#{{ $getLabel() }}').trumbowyg('html', window.livewire.data.data['{{ strtolower($getLabel()) }}']);
+            if (window.livewire.data) {
+                $(id).trumbowyg('html', window.livewire.data.data['{{ $editorId }}']);
+            }
 
-            $('#{{ $getLabel() }}').on('tbwchange', function (e) {
-                e.target.dispatchEvent(new CustomEvent('{{ strtolower($getLabel()) }}', {bubbles: true, detail: {text: e.target.value }}))
+            if (!window.livewire.data) {
+                $(id).trumbowyg('html', @this.data['{{ $editorId }}']);
+            }
+
+            $(id).on('tbwchange', function (e) {
+                e.target.dispatchEvent(new CustomEvent('{{ $editorId }}', {bubbles: true, detail: {text: e.target.value }}))
             });
         } else {
             if (!window.jQuery) {
