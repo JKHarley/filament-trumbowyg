@@ -2,6 +2,8 @@
 
 All notable changes to `filament-trumbowyg` will be documented in this file.
 
+## 2.1.0
+
 ## 2.0.0 - 2023-04-12
 - Adds support for Laravel 10
 - Fix an issue accessing the editor data through `livewire.data`
