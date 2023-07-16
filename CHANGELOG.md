@@ -3,6 +3,7 @@
 All notable changes to `filament-trumbowyg` will be documented in this file.
 
 ## 2.1.0
+- Adds support for tag classes [https://alex-d.github.io/Trumbowyg/documentation/#tag-classes]
 
 ## 2.0.0 - 2023-04-12
 - Adds support for Laravel 10
