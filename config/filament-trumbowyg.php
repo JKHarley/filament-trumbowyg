@@ -2,5 +2,5 @@
 
 return [
     'buttons' => [],
-    'tagClasses' => []
+    'tagClasses' => [],
 ];
