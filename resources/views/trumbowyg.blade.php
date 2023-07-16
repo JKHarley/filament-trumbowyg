@@ -35,19 +35,36 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
         if (window.jQuery && window.Alpine) {
             const id = '#{{ $editorId }}';
 
-            @if(!is_null($getButtons()))
-                $(id).trumbowyg({
-                    resetCss: true,
-                    btns: @json($getButtons())
-                })
-            @else
-                $(id).trumbowyg({
-                    resetCss: true,
-                    @if(!is_null(config('filament-trumbowyg.buttons')) && !empty(config('filament-trumbowyg.buttons')))
-                        btns: @json(config('filament-trumbowyg.buttons'))
-                    @endif
-                });
+            const options = {
+                resetCss: true,
+            }
+
+
+            @if (!is_null($getButtons()))
+                options.btns = @json($getButtons())
             @endif
+
+            @if (
+                is_null($getButtons()) &&
+                !is_null(config('filament-trumbowyg.buttons')) &&
+                !empty(config('filament-trumbowyg.buttons'))
+            )
+                options.btns = @json(config('filament-trumbowyg.buttons'));
+            @endif
+
+            @if (!is_null($getTagClasses()))
+                options.tagClasses = @json($getTagClasses());
+            @endif
+
+            @if (
+                is_null($getTagClasses()) &&
+                !is_null(config('filament-trumbowyg.tagClasses')) &&
+                !empty(config('filament-trumbowyg.tagClasses'))
+            )
+                options.tagClasses = @json(config('filament-trumbowyg.tagClasses'));
+            @endif
+
+            $(id).trumbowyg(options);
 
             if (window.livewire.data) {
                 $(id).trumbowyg('html', window.livewire.data.data['{{ $editorId }}']);
