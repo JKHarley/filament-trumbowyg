@@ -57,10 +57,10 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
 
             @if (
                 is_null($getTagClasses()) &&
-                !is_null(config('filament-trumbowyg.tagClasses')) &&
-                !empty(config('filament-trumbowyg.tagClasses'))
+                !is_null(config('filament-trumbowyg.tag_classes')) &&
+                !empty(config('filament-trumbowyg.tag_classes'))
             )
-                options.tagClasses = @json(config('filament-trumbowyg.tagClasses'));
+                options.tagClasses = @json(config('filament-trumbowyg.tag_classes'));
             @endif
 
             @if (!is_null($getChangeActiveDropdownIcon()))
@@ -69,9 +69,9 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
 
             @if (
                 is_null($getChangeActiveDropdownIcon()) &&
-                !is_null(config('filament-trumbowyg.changeActiveDropdownIcon'))
+                !is_null(config('filament-trumbowyg.change_active_dropdown_icon'))
             )
-                options.changeActiveDropdownIcon = @json(config('filament-trumbowyg.changeActiveDropdownIcon'));
+                options.changeActiveDropdownIcon = @json(config('filament-trumbowyg.change_active_dropdown_icon'));
             @endif
 
             @if (!is_null($getSemantic()))
