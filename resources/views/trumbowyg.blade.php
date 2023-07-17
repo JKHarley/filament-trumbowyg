@@ -39,7 +39,6 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 resetCss: true,
             }
 
-
             @if (!is_null($getButtons()))
                 options.btns = @json($getButtons())
             @endif
@@ -63,6 +62,20 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
             )
                 options.tagClasses = @json(config('filament-trumbowyg.tagClasses'));
             @endif
+
+            @if (!is_null($getChangeActiveDropdownIcon()))
+                options.changeActiveDropdownIcon = @json($getChangeActiveDropdownIcon());
+            @endif
+
+            @if (
+                is_null($getChangeActiveDropdownIcon()) &&
+                !is_null(config('filament-trumbowyg.changeActiveDropdownIcon')) &&
+                config('filament-trumbowyg.changeActiveDropdownIcon')
+            )
+                options.changeActiveDropdownIcon = @json(config('filament-trumbowyg.changeActiveDropdownIcon'));
+            @endif
+
+                console.log(options)
 
             $(id).trumbowyg(options);
 

@@ -3,4 +3,5 @@
 return [
     'buttons' => [],
     'tagClasses' => [],
+    'changeActiveDropdownIcon' => false,
 ];
