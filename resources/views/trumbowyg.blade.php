@@ -69,11 +69,22 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
 
             @if (
                 is_null($getChangeActiveDropdownIcon()) &&
-                !is_null(config('filament-trumbowyg.changeActiveDropdownIcon')) &&
-                config('filament-trumbowyg.changeActiveDropdownIcon')
+                !is_null(config('filament-trumbowyg.changeActiveDropdownIcon'))
             )
                 options.changeActiveDropdownIcon = @json(config('filament-trumbowyg.changeActiveDropdownIcon'));
             @endif
+
+            @if (!is_null($getSemantic()))
+                options.semantic = @json($getSemantic());
+            @endif
+
+            @if (
+                is_null($getSemantic()) &&
+                !is_null(config('filament-trumbowyg.semantic'))
+            )
+                options.semantic = @json(config('filament-trumbowyg.semantic'))
+            @endif
+
 
             $(id).trumbowyg(options);
 
