@@ -75,8 +75,6 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.changeActiveDropdownIcon = @json(config('filament-trumbowyg.changeActiveDropdownIcon'));
             @endif
 
-                console.log(options)
-
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
