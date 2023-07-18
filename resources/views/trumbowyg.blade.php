@@ -85,6 +85,16 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.semantic = @json(config('filament-trumbowyg.semantic'))
             @endif
 
+            @if (!is_null($getRemoveFormatPasted()))
+                options.removeformatPasted = @json($getRemoveFormatPasted());
+            @endif
+
+                @if (
+                    is_null($getRemoveFormatPasted()) &&
+                    !is_null(config('filament-trumbowyg.remove_format_pasted'))
+                )
+                options.removeformatPasted = @json(config('filament-trumbowyg.remove_format_pasted'))
+            @endif
 
             $(id).trumbowyg(options);
 
