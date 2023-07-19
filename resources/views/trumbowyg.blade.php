@@ -103,7 +103,7 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
             @if (
                 is_null($getTagsToRemove()) &&
                 !is_null(config('filament-trumbowyg.tags_to_remove')) &&
-                !empty(config('filament-trumbowyg.tag_classes'))
+                !empty(config('filament-trumbowyg.tags_to_remove'))
             )
                 options.tagsToRemove = @json(config('filament-trumbowyg.tags_to_remove'))
             @endif
