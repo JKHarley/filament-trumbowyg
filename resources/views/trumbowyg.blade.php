@@ -89,11 +89,23 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.removeformatPasted = @json($getRemoveFormatPasted());
             @endif
 
-                @if (
-                    is_null($getRemoveFormatPasted()) &&
-                    !is_null(config('filament-trumbowyg.remove_format_pasted'))
-                )
+            @if (
+                is_null($getRemoveFormatPasted()) &&
+                !is_null(config('filament-trumbowyg.remove_format_pasted'))
+            )
                 options.removeformatPasted = @json(config('filament-trumbowyg.remove_format_pasted'))
+            @endif
+
+            @if (!is_null($getTagsToRemove()))
+                options.tagsToRemove = @json($getTagsToRemove());
+            @endif
+
+            @if (
+                is_null($getTagsToRemove()) &&
+                !is_null(config('filament-trumbowyg.tags_to_remove')) &&
+                !empty(config('filament-trumbowyg.tags_to_remove'))
+            )
+                options.tagsToRemove = @json(config('filament-trumbowyg.tags_to_remove'))
             @endif
 
             $(id).trumbowyg(options);
