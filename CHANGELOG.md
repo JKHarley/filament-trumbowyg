@@ -6,6 +6,7 @@ All notable changes to `filament-trumbowyg` will be documented in this file.
 - Adds support for tag classes [https://alex-d.github.io/Trumbowyg/documentation/#tag-classes]
 - Adds support for active dropdown icon [https://alex-d.github.io/Trumbowyg/documentation/#change-active-dropdown-icon]
 - Adds support for remove format on pasted [https://alex-d.github.io/Trumbowyg/documentation/#remove-format-pasted]
+- Adds support for removing tags [https://alex-d.github.io/Trumbowyg/documentation/#tags-to-remove]
 
 ## 2.0.0 - 2023-04-12
 - Adds support for Laravel 10
