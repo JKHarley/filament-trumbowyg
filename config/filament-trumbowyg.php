@@ -10,4 +10,5 @@ return [
     'tags_to_keep' => [],
     'url_protocol' => false,
     'minimal_links' => false,
+    'link_targets' => ['_self', '_blank'],
 ];

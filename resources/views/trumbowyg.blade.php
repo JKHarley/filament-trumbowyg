@@ -142,6 +142,18 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.minimalLinks = @json(config('filament-trumbowyg.minimal_links'))
             @endif
 
+            @if (
+                is_null($getLinkTargets()) &&
+                !is_null(config('filament-trumbowyg.link_targets')) &&
+                !empty(config('filament-trumbowyg.link_targets'))
+            )
+                options.linkTargets = @json(config('filament-trumbowyg.link_targets'))
+            @endif
+
+            @if (!is_null($getLinkTargets()))
+                options.linkTargets = @json($getLinkTargets());
+            @endif
+
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
