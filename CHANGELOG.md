@@ -10,6 +10,7 @@ All notable changes to `filament-trumbowyg` will be documented in this file.
 - Adds support for keeping tags [https://alex-d.github.io/Trumbowyg/documentation/#tags-to-keep]
 - Adds support for minimal links [https://alex-d.github.io/Trumbowyg/documentation/#minimal-links]
 - Adds support for link targets [https://alex-d.github.io/Trumbowyg/documentation/#link-targets]
+- Adds support for image width modal edit [https://alex-d.github.io/Trumbowyg/documentation/#image-width-modal-edit]
 
 ## 2.0.0 - 2023-04-12
 - Adds support for Laravel 10

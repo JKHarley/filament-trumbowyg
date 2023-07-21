@@ -5,6 +5,7 @@ namespace JKHarley\FilamentTrumbowyg;
 use Filament\Forms\Components\Concerns\HasPlaceholder;
 use JKHarley\FilamentTrumbowyg\traits\HasButtons;
 use JKHarley\FilamentTrumbowyg\traits\HasChangeActiveDropdownIcon;
+use JKHarley\FilamentTrumbowyg\traits\HasImageWidthModalEdit;
 use JKHarley\FilamentTrumbowyg\traits\HasLinkTargets;
 use JKHarley\FilamentTrumbowyg\traits\HasMinimalLinks;
 use JKHarley\FilamentTrumbowyg\traits\HasRemoveFormatPasted;
@@ -27,6 +28,7 @@ class Trumbowyg extends \Filament\Forms\Components\Field
     use HasUrlProtocol;
     use HasMinimalLinks;
     use HasLinkTargets;
+    use HasImageWidthModalEdit;
 
     protected string $view = 'filament-trumbowyg::trumbowyg';
 }

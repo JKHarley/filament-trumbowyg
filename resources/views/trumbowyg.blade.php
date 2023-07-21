@@ -154,6 +154,17 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.linkTargets = @json($getLinkTargets());
             @endif
 
+            @if (
+                is_null($getImageWidthModalEdit()) &&
+                !is_null(config('filament-trumbowyg.image_width_modal_edit'))
+            )
+                options.imageWidthModalEdit = @json(config('filament-trumbowyg.image_width_modal_edit'))
+            @endif
+
+            @if (!is_null($getImageWidthModalEdit()))
+                options.imageWidthModalEdit = @json($getImageWidthModalEdit());
+            @endif
+
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
