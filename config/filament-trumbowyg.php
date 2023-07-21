@@ -9,4 +9,5 @@ return [
     'tags_to_remove' => [],
     'tags_to_keep' => [],
     'url_protocol' => false,
+    'minimal_links' => false,
 ];
