@@ -108,6 +108,18 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.tagsToRemove = @json(config('filament-trumbowyg.tags_to_remove'))
             @endif
 
+            @if (!is_null($getTagsToKeep()))
+                options.tagsToKeep = @json($getTagsToKeep());
+            @endif
+
+            @if (
+                is_null($getTagsToKeep()) &&
+                !is_null(config('filament-trumbowyg.tags_to_keep')) &&
+                !empty(config('filament-trumbowyg.tags_to_keep'))
+            )
+                options.tagsToKeep = @json(config('filament-trumbowyg.tags_to_keep'))
+            @endif
+
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
