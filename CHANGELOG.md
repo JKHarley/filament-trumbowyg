@@ -8,6 +8,8 @@ All notable changes to `filament-trumbowyg` will be documented in this file.
 - Adds support for remove format on pasted [https://alex-d.github.io/Trumbowyg/documentation/#remove-format-pasted]
 - Adds support for removing tags [https://alex-d.github.io/Trumbowyg/documentation/#tags-to-remove]
 - Adds support for keeping tags [https://alex-d.github.io/Trumbowyg/documentation/#tags-to-keep]
+- Adds support for minimal links [https://alex-d.github.io/Trumbowyg/documentation/#minimal-links]
+- Adds support for link targets [https://alex-d.github.io/Trumbowyg/documentation/#link-targets]
 
 ## 2.0.0 - 2023-04-12
 - Adds support for Laravel 10
