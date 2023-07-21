@@ -28,7 +28,7 @@ class Trumbowyg extends \Filament\Forms\Components\Field
     use HasUrlProtocol;
     use HasMinimalLinks;
     use HasLinkTargets;
-    Use HasImageWidthModalEdit;
+    use HasImageWidthModalEdit;
 
     protected string $view = 'filament-trumbowyg::trumbowyg';
 }
