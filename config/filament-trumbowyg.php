@@ -7,4 +7,5 @@ return [
     'semantic' => true,
     'remove_format_pasted' => false,
     'tags_to_remove' => [],
+    'tags_to_keep' => [],
 ];

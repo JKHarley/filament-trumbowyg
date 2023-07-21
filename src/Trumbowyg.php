@@ -8,6 +8,7 @@ use JKHarley\FilamentTrumbowyg\traits\HasChangeActiveDropdownIcon;
 use JKHarley\FilamentTrumbowyg\traits\HasRemoveFormatPasted;
 use JKHarley\FilamentTrumbowyg\traits\HasSemantic;
 use JKHarley\FilamentTrumbowyg\traits\HasTagClasses;
+use JKHarley\FilamentTrumbowyg\traits\HasTagsToKeep;
 use JKHarley\FilamentTrumbowyg\traits\HasTagsToRemove;
 
 class Trumbowyg extends \Filament\Forms\Components\Field
@@ -19,6 +20,7 @@ class Trumbowyg extends \Filament\Forms\Components\Field
     use HasSemantic;
     use HasRemoveFormatPasted;
     use HasTagsToRemove;
+    use HasTagsToKeep;
 
     protected string $view = 'filament-trumbowyg::trumbowyg';
 }
