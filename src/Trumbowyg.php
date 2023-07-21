@@ -10,6 +10,7 @@ use JKHarley\FilamentTrumbowyg\traits\HasSemantic;
 use JKHarley\FilamentTrumbowyg\traits\HasTagClasses;
 use JKHarley\FilamentTrumbowyg\traits\HasTagsToKeep;
 use JKHarley\FilamentTrumbowyg\traits\HasTagsToRemove;
+use JKHarley\FilamentTrumbowyg\traits\HasUrlProtocol;
 
 class Trumbowyg extends \Filament\Forms\Components\Field
 {
@@ -21,6 +22,7 @@ class Trumbowyg extends \Filament\Forms\Components\Field
     use HasRemoveFormatPasted;
     use HasTagsToRemove;
     use HasTagsToKeep;
+    use HasUrlProtocol;
 
     protected string $view = 'filament-trumbowyg::trumbowyg';
 }

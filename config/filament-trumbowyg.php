@@ -8,4 +8,5 @@ return [
     'remove_format_pasted' => false,
     'tags_to_remove' => [],
     'tags_to_keep' => [],
+    'url_protocol' => false,
 ];
