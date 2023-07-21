@@ -120,6 +120,17 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.tagsToKeep = @json(config('filament-trumbowyg.tags_to_keep'))
             @endif
 
+            @if (!is_null($getUrlProtocol()))
+                options.urlProtocol = @json($getUrlProtocol());
+            @endif
+
+            @if (
+                is_null($getUrlProtocol()) &&
+                !is_null(config('filament-trumbowyg.url_protocol'))
+            )
+                options.urlProtocol = @json(config('filament-trumbowyg.url_protocol'))
+            @endif
+
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
