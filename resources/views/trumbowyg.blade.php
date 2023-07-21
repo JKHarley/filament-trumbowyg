@@ -131,6 +131,17 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
                 options.urlProtocol = @json(config('filament-trumbowyg.url_protocol'))
             @endif
 
+            @if (!is_null($getMinimalLinks()))
+                options.minimalLinks = @json($getMinimalLinks());
+            @endif
+
+            @if (
+                is_null($getMinimalLinks()) &&
+                !is_null(config('filament-trumbowyg.minimal_links'))
+            )
+                options.minimalLinks = @json(config('filament-trumbowyg.minimal_links'))
+            @endif
+
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
