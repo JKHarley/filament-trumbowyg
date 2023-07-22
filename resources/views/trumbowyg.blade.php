@@ -1,6 +1,5 @@
 @php
-// Label is used to assign an id to the editor as $getId() causes issues
-$editorId = strtolower(str_replace(' ', '-', $getLabel()));
+$editorId = strtolower(str_replace('.', '-', $getId()));
 @endphp
 
 <x-dynamic-component
@@ -168,11 +167,11 @@ $editorId = strtolower(str_replace(' ', '-', $getLabel()));
             $(id).trumbowyg(options);
 
             if (window.livewire.data) {
-                $(id).trumbowyg('html', window.livewire.data.data['{{ $editorId }}']);
+                $(id).trumbowyg('html', window.livewire.data['{{ $getStatePath() }}']);
             }
 
             if (!window.livewire.data) {
-                $(id).trumbowyg('html', @this.data['{{ $editorId }}']);
+                $(id).trumbowyg('html', @this['{{ $getStatePath() }}']);
             }
 
             $(id).on('tbwchange', function (e) {
