@@ -11,6 +11,7 @@ All notable changes to `filament-trumbowyg` will be documented in this file.
 - Adds support for minimal links [https://alex-d.github.io/Trumbowyg/documentation/#minimal-links]
 - Adds support for link targets [https://alex-d.github.io/Trumbowyg/documentation/#link-targets]
 - Adds support for image width modal edit [https://alex-d.github.io/Trumbowyg/documentation/#image-width-modal-edit]
+- Adds support for url protocol [https://alex-d.github.io/Trumbowyg/documentation/#url-protocol]
 - Fix state issue when using a custom label
 
 ## 2.0.0 - 2023-04-12

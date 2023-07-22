@@ -91,6 +91,22 @@ Trumbowyg::make('my-field')
     ]),
 ```
 
+### Basic Options
+
+Most options under the `basic options` selection on the [Trumbowyg](https://alex-d.github.io/Trumbowyg/documentation/#basic-options) website are supported with this field. Each option can be added as a chained method on the field or all fields can default to a value set in the config file. Here are the options that can be passed with an example value:
+```php
+Trumbowyg::make('my-field')
+    ->tagClasses([])
+    ->changeActiveDropdownIcon(true)
+    ->removeFormatPasted(true)
+    ->tagsToRemove(['script'])
+    ->tagsToKeep([])
+    ->minimalLinks(true)
+    ->linkTargets(['_self'])
+    ->imageWidthModalEdit(true)
+    ->urlProtocol('ftp')
+```
+
 ## Future Additions
 - Localization
 - Theme customisation
