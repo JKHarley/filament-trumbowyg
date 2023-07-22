@@ -8,7 +8,7 @@
 <img width="1518" alt="Screenshot 2022-11-27 at 18 04 49" src="https://user-images.githubusercontent.com/27085725/204152174-cc7d0ed5-6911-4e49-adc0-eb839df70261.png">
  
 ## Disclaimer
-> **Warning**
+> **Warning**:
 This field does not work with the Filament block builder. I'm actively trying to make this compatible and will hopefully have an update in the near future.
 
 ## Installation
