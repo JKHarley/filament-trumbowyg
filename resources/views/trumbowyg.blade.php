@@ -9,7 +9,6 @@ $editorId = strtolower(str_replace('.', '-', $getId()));
     :label-sr-only="$isLabelHidden()"
     :helper-text="$getHelperText()"
     :hint="$getHint()"
-    :hint-action="$getHintAction()"
     :hint-color="$getHintColor()"
     :hint-icon="$getHintIcon()"
     :required="$isRequired()"
@@ -17,13 +16,13 @@ $editorId = strtolower(str_replace('.', '-', $getId()));
 >
     <div
         wire:ignore
-        x-data="{ state: $wire.entangle('{{ $getStatePath() }}').defer }"
+        x-data="{ state: $wire.entangle('{{ $getStatePath() }}')}"
     >
         <textarea
             x-on:{{ $editorId }}.window="(e) => state = e.detail.text"
             id="{{ $editorId }}"
             @if (!is_null($getPlaceholder()))
-                placeholder="{{ $getPlaceholder() }}";
+                placeholder="{{ $getPlaceholder() }}"
             @endif
         ></textarea>
     </div>
@@ -166,12 +165,8 @@ $editorId = strtolower(str_replace('.', '-', $getId()));
 
             $(id).trumbowyg(options);
 
-            if (window.livewire.data) {
-                $(id).trumbowyg('html', window.livewire.data['{{ $getStatePath() }}']);
-            }
-
-            if (!window.livewire.data) {
-                $(id).trumbowyg('html', @this['{{ $getStatePath() }}']);
+            if (window.Livewire) {
+                $(id).trumbowyg('html', "{!! data_get($this, $getStatePath()) !!}");
             }
 
             $(id).on('tbwchange', function (e) {
