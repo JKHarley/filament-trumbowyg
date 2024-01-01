@@ -29,6 +29,6 @@ class FilamentTrumbowygServiceProvider extends PackageServiceProvider
             // Scripts
             Js::make('jquery', 'https://code.jquery.com/jquery-3.6.1.min.js'),
             Js::make('trumbowyg-core', 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/trumbowyg.min.js'),
-        ], 'jkharley/' . static::$name);
+        ], 'jkharley/'.static::$name);
     }
 }
