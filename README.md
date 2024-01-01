@@ -9,7 +9,7 @@
  
 ## Disclaimer
 > **Warning**:
-This field does not work with the Filament block builder. I'm actively trying to make this compatible and will hopefully have an update in the near future.
+This field does not work with the Filament block builder. I'm actively trying to make this compatible and will hopefully have an update in the near future. The WYSIWYG default theme may also not work as expected in some cases with the Filament 3 theming. If you're using Filament in light mode make sure to set `reset_css` to `false` in the `filament-trumbowyg.php` config in a future update I will be adding the ability to customise the WYSIWYG theme.
 
 ## Installation
 

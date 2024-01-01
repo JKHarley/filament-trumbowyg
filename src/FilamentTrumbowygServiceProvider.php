@@ -24,14 +24,11 @@ class FilamentTrumbowygServiceProvider extends PackageServiceProvider
     {
         FilamentAsset::register([
             // Styles
-            Css::make('plugin-filament-trumbowyg', __DIR__.'/../resources/dist/filament-trumbowyg.css'),
             Css::make('trumbowyg-core', 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/ui/trumbowyg.min.css'),
 
             // Scripts
-            Js::make('plugin-filament-trumbowyg', __DIR__.'/../resources/dist/filament-trumbowyg.js'),
             Js::make('jquery', 'https://code.jquery.com/jquery-3.6.1.min.js'),
             Js::make('trumbowyg-core', 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/trumbowyg.min.js'),
-            Js::make('trumbowyg-core', 'https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/trumbowyg.min.js'),
-        ]);
+        ], 'jkharley/' . static::$name);
     }
 }

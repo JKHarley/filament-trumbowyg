@@ -8,7 +8,7 @@ trait HasRemoveFormatPasted
 {
     protected bool|Closure|null $removeFormatPasted = null;
 
-    public function removeFormatPasted(bool|Closure|null $removeFormatPasted): static
+    public function removeFormatPasted(bool|Closure $removeFormatPasted): static
     {
         $this->removeFormatPasted = $removeFormatPasted;
 

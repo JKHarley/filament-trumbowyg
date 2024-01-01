@@ -8,7 +8,7 @@ trait HasChangeActiveDropdownIcon
 {
     protected bool|Closure|null $changeActiveDropdownIcon = null;
 
-    public function changeActiveDropdownIcon(bool|Closure|null $changeActiveDropdownIcon): static
+    public function changeActiveDropdownIcon(bool|Closure $changeActiveDropdownIcon = true): static
     {
         $this->changeActiveDropdownIcon = $changeActiveDropdownIcon;
 

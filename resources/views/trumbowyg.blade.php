@@ -1,5 +1,5 @@
 @php
-$editorId = strtolower(str_replace('.', '-', $getId()));
+    $editorId = strtolower(str_replace('.', '-', $getId()));
 @endphp
 
 <x-dynamic-component
@@ -29,148 +29,148 @@ $editorId = strtolower(str_replace('.', '-', $getId()));
 </x-dynamic-component>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         if (window.jQuery && window.Alpine) {
             const id = '#{{ $editorId }}';
+            const options = {}
 
-            const options = {
-                resetCss: true,
+            const resetCss = @json(config('filament-trumbowyg.reset_css'));
+
+            const buttons = @json($getButtons());
+            const buttonsConfig = @json(config('filament-trumbowyg.buttons'));
+
+            const tagClasses = @json($getTagClasses());
+            const tagClassesConfig = @json(config('filament-trumbowyg.tag_classes'));
+
+            const changeActiveDropdownIcon = @json($getChangeActiveDropdownIcon());
+            const changeActiveDropdownIconConfig = @json(config('filament-trumbowyg.change_active_dropdown_icon'));
+
+            const semantic = @json($getSemantic());
+            const semanticConfig = @json(config('filament-trumbowyg.semantic'));
+
+            const removeFormatPasted = @json($getRemoveFormatPasted());
+            const removeFormatPastedConfig = @json(config('filament-trumbowyg.remove_format_pasted'));
+
+            const tagsToRemove = @json($getTagsToRemove());
+            const tagsToRemoveConfig = @json(config('filament-trumbowyg.tags_to_remove'));
+
+            const tagsToKeep = @json($getTagsToKeep());
+            const tagsToKeepConfig = @json(config('filament-trumbowyg.tags_to_keep'));
+
+            const urlProtocol = @json($getUrlProtocol());
+            const urlProtocolConfig = @json(config('filament-trumbowyg.url_protocol'));
+
+            const minimalLinks = @json($getMinimalLinks());
+            const minimalLinksConfig = @json(config('filament-trumbowyg.minimal_links'));
+
+            const linkTargets = @json($getLinkTargets());
+            const linkTargetsConfig = @json(config('filament-trumbowyg.link_targets'));
+
+            const imageWidthModalEdit = @json($getImageWidthModalEdit());
+            const imageWidthModalEditConfig = @json(config('filament-trumbowyg.image_width_modal_edit'));
+
+            if (buttons) {
+                options.btns = buttons;
             }
 
-            @if (!is_null($getButtons()))
-                options.btns = @json($getButtons())
-            @endif
+            if (!buttons && buttonsConfig && buttonsConfig.length > 0) {
+                options.btns = buttonsConfig;
+            }
 
-            @if (
-                is_null($getButtons()) &&
-                !is_null(config('filament-trumbowyg.buttons')) &&
-                !empty(config('filament-trumbowyg.buttons'))
-            )
-                options.btns = @json(config('filament-trumbowyg.buttons'));
-            @endif
+            if (tagClasses) {
+                options.tagClasses = tagClasses;
+            }
 
-            @if (!is_null($getTagClasses()))
-                options.tagClasses = @json($getTagClasses());
-            @endif
+            if (!tagClasses && tagClassesConfig) {
+                options.tagClasses = tagClassesConfig;
+            }
 
-            @if (
-                is_null($getTagClasses()) &&
-                !is_null(config('filament-trumbowyg.tag_classes')) &&
-                !empty(config('filament-trumbowyg.tag_classes'))
-            )
-                options.tagClasses = @json(config('filament-trumbowyg.tag_classes'));
-            @endif
+            if (changeActiveDropdownIcon) {
+                options.changeActiveDropdownIcon = changeActiveDropdownIcon;
+            }
 
-            @if (!is_null($getChangeActiveDropdownIcon()))
-                options.changeActiveDropdownIcon = @json($getChangeActiveDropdownIcon());
-            @endif
+            if (!changeActiveDropdownIcon && changeActiveDropdownIconConfig) {
+                options.changeActiveDropdownIcon = changeActiveDropdownIconConfig;
+            }
 
-            @if (
-                is_null($getChangeActiveDropdownIcon()) &&
-                !is_null(config('filament-trumbowyg.change_active_dropdown_icon'))
-            )
-                options.changeActiveDropdownIcon = @json(config('filament-trumbowyg.change_active_dropdown_icon'));
-            @endif
+            if (semantic) {
+                options.semantic = semantic;
+            }
 
-            @if (!is_null($getSemantic()))
-                options.semantic = @json($getSemantic());
-            @endif
+            if (!semantic && semanticConfig) {
+                options.semantic = semanticConfig;
+            }
 
-            @if (
-                is_null($getSemantic()) &&
-                !is_null(config('filament-trumbowyg.semantic'))
-            )
-                options.semantic = @json(config('filament-trumbowyg.semantic'))
-            @endif
+            if (removeFormatPasted) {
+                options.removeformatPasted = removeFormatPasted;
+            }
 
-            @if (!is_null($getRemoveFormatPasted()))
-                options.removeformatPasted = @json($getRemoveFormatPasted());
-            @endif
+            if (!removeFormatPasted &&removeFormatPastedConfig) {
+                options.removeformatPasted =removeFormatPastedConfig;
+            }
 
-            @if (
-                is_null($getRemoveFormatPasted()) &&
-                !is_null(config('filament-trumbowyg.remove_format_pasted'))
-            )
-                options.removeformatPasted = @json(config('filament-trumbowyg.remove_format_pasted'))
-            @endif
+            if (tagsToRemove) {
+                options.tagsToRemove = tagsToRemove;
+            }
 
-            @if (!is_null($getTagsToRemove()))
-                options.tagsToRemove = @json($getTagsToRemove());
-            @endif
+            if (!tagsToRemove && tagsToRemoveConfig && tagsToRemoveConfig.length > 0) {
+                options.tagsToRemove = @json(config('filament-trumbowyg.tags_to_remove'));
+            }
 
-            @if (
-                is_null($getTagsToRemove()) &&
-                !is_null(config('filament-trumbowyg.tags_to_remove')) &&
-                !empty(config('filament-trumbowyg.tags_to_remove'))
-            )
-                options.tagsToRemove = @json(config('filament-trumbowyg.tags_to_remove'))
-            @endif
+            if (tagsToKeep) {
+                options.tagsToKeep = tagsToKeep;
+            }
 
-            @if (!is_null($getTagsToKeep()))
-                options.tagsToKeep = @json($getTagsToKeep());
-            @endif
+            if (!tagsToKeep && tagsToKeepConfig && tagsToKeepConfig.length > 0) {
+                options.tagsToKeep = tagsToKeepConfig;
+            }
 
-            @if (
-                is_null($getTagsToKeep()) &&
-                !is_null(config('filament-trumbowyg.tags_to_keep')) &&
-                !empty(config('filament-trumbowyg.tags_to_keep'))
-            )
-                options.tagsToKeep = @json(config('filament-trumbowyg.tags_to_keep'))
-            @endif
+            if (urlProtocol) {
+                options.urlProtocol = urlProtocol;
+            }
 
-            @if (!is_null($getUrlProtocol()))
-                options.urlProtocol = @json($getUrlProtocol());
-            @endif
+            if (!urlProtocol && urlProtocolConfig && urlProtocolConfig.length > 0) {
+                options.urlProtocol = urlProtocolConfig;
+            }
 
-            @if (
-                is_null($getUrlProtocol()) &&
-                !is_null(config('filament-trumbowyg.url_protocol'))
-            )
-                options.urlProtocol = @json(config('filament-trumbowyg.url_protocol'))
-            @endif
+            if (minimalLinks) {
+                options.minimalLinks = minimalLinks;
+            }
 
-            @if (!is_null($getMinimalLinks()))
-                options.minimalLinks = @json($getMinimalLinks());
-            @endif
+            if (!minimalLinks && minimalLinksConfig && minimalLinksConfig.length > 0) {
+                options.minimalLinks = minimalLinksConfig;
+            }
 
-            @if (
-                is_null($getMinimalLinks()) &&
-                !is_null(config('filament-trumbowyg.minimal_links'))
-            )
-                options.minimalLinks = @json(config('filament-trumbowyg.minimal_links'))
-            @endif
+            if (!linkTargets && linkTargetsConfig && linkTargetsConfig.length > 0) {
+                options.linkTargets = linkTargetsConfig;
+            }
 
-            @if (
-                is_null($getLinkTargets()) &&
-                !is_null(config('filament-trumbowyg.link_targets')) &&
-                !empty(config('filament-trumbowyg.link_targets'))
-            )
-                options.linkTargets = @json(config('filament-trumbowyg.link_targets'))
-            @endif
+            if (linkTargets) {
+                options.linkTargets = linkTargets;
+            }
 
-            @if (!is_null($getLinkTargets()))
-                options.linkTargets = @json($getLinkTargets());
-            @endif
+            if (!imageWidthModalEdit && imageWidthModalEditConfig) {
+                options.imageWidthModalEdit = imageWidthModalEditConfig;
+            }
 
-            @if (
-                is_null($getImageWidthModalEdit()) &&
-                !is_null(config('filament-trumbowyg.image_width_modal_edit'))
-            )
-                options.imageWidthModalEdit = @json(config('filament-trumbowyg.image_width_modal_edit'))
-            @endif
-
-            @if (!is_null($getImageWidthModalEdit()))
-                options.imageWidthModalEdit = @json($getImageWidthModalEdit());
-            @endif
-
-            $(id).trumbowyg(options);
+            if (imageWidthModalEdit) {
+                options.imageWidthModalEdit = imageWidthModalEdit;
+            }
 
             if (window.Livewire) {
-                $(id).trumbowyg('html', "{!! data_get($this, $getStatePath()) !!}");
+                $(id).trumbowyg(options);
+                $(id).trumbowyg('html', '{!! data_get($this, $getStatePath()) !!}');
+            }
+
+            if (!resetCss) {
+                $('.trumbowyg-textarea').css('background-color', 'black');
             }
 
             $(id).on('tbwchange', function (e) {
-                e.target.dispatchEvent(new CustomEvent('{{ $editorId }}', {bubbles: true, detail: {text: e.target.value }}))
+                e.target.dispatchEvent(new CustomEvent('{{ $editorId }}', {
+                    bubbles: true,
+                    detail: {text: e.target.value}
+                }))
             });
         } else {
             if (!window.jQuery) {
