@@ -2,6 +2,9 @@
 
 All notable changes to `filament-trumbowyg` will be documented in this file.
 
+## 3.0.0 - 2024-01-01
+- Adds support for Filament 3.0
+
 ## 2.1.0 - 2023-07-23
 - Adds support for tag classes [https://alex-d.github.io/Trumbowyg/documentation/#tag-classes]
 - Adds support for active dropdown icon [https://alex-d.github.io/Trumbowyg/documentation/#change-active-dropdown-icon]

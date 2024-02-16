@@ -17,18 +17,18 @@ use JKHarley\FilamentTrumbowyg\traits\HasUrlProtocol;
 
 class Trumbowyg extends \Filament\Forms\Components\Field
 {
-    use HasPlaceholder;
     use HasButtons;
-    use HasTagClasses;
     use HasChangeActiveDropdownIcon;
-    use HasSemantic;
-    use HasRemoveFormatPasted;
-    use HasTagsToRemove;
-    use HasTagsToKeep;
-    use HasUrlProtocol;
-    use HasMinimalLinks;
-    use HasLinkTargets;
     use HasImageWidthModalEdit;
+    use HasLinkTargets;
+    use HasMinimalLinks;
+    use HasPlaceholder;
+    use HasRemoveFormatPasted;
+    use HasSemantic;
+    use HasTagClasses;
+    use HasTagsToKeep;
+    use HasTagsToRemove;
+    use HasUrlProtocol;
 
     protected string $view = 'filament-trumbowyg::trumbowyg';
 }

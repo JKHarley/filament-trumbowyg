@@ -8,7 +8,7 @@ trait HasImageWidthModalEdit
 {
     protected bool|Closure|null $imageWidthModalEdit = null;
 
-    public function imageWidthModalEdit(bool|Closure|null $imageWidthModalEdit): static
+    public function imageWidthModalEdit(bool|Closure $imageWidthModalEdit = true): static
     {
         $this->imageWidthModalEdit = $imageWidthModalEdit;
 

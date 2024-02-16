@@ -12,4 +12,5 @@ return [
     'minimal_links' => false,
     'link_targets' => ['_self', '_blank'],
     'image_width_modal_edit' => false,
+    'reset_css' => false,
 ];

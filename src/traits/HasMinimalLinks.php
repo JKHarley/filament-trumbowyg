@@ -8,7 +8,7 @@ trait HasMinimalLinks
 {
     protected bool|Closure|null $minimalLinks = null;
 
-    public function minimalLinks(bool|Closure|null $minimalLinks): static
+    public function minimalLinks(bool|Closure $minimalLinks = true): static
     {
         $this->minimalLinks = $minimalLinks;
 
